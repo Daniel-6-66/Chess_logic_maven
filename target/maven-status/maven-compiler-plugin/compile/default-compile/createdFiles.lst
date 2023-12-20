@@ -1,0 +1,12 @@
+org\example\ChessBoard.class
+org\example\Name.class
+org\example\Main.class
+org\example\Rook.class
+org\example\Bishop.class
+org\example\Pawn.class
+org\example\Queen.class
+org\example\ChessGame.class
+org\example\ChessPiece.class
+org\example\Knight.class
+org\example\Color.class
+org\example\King.class
