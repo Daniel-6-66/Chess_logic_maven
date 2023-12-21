@@ -186,32 +186,6 @@ public class ChessBoard {
         return false; // Ни один ход не устраняет шах
     }
 
-    public boolean isCheckmate(Color kingColor) {
-        ChessPiece[][] currentBoard = getBoard();
-        boolean kingFound = false;
-
-        for (ChessPiece[] row : currentBoard) {
-            for (ChessPiece piece : row) {
-                if (piece instanceof King && piece.GetColor() == kingColor) {
-                    kingFound = true;
-                    break;
-                }
-            }
-            if (kingFound) {
-                break;
-            }
-        }
-
-        return !kingFound;
-    }
-
-
-
-
-
-
-
-
 
     // Метод для преобразования буквенной координаты в индекс массива
     private int convertLetterToIndex(char letter) {
