@@ -185,6 +185,27 @@ public class ChessBoard {
         }
         return false; // Ни один ход не устраняет шах
     }
+    public boolean isCheckMate(Color playerColor) {
+        // Проверяем, находится ли король в шаху
+        if (!isCheck(playerColor)) {
+            return false;
+        }
+
+        // Перебираем все фигуры текущего игрока
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                ChessPiece piece = board[i][j];
+                if (piece != null && piece.GetColor() == playerColor) {
+                    // Проверяем, может ли какая-либо фигура защитить короля
+                    if (canPieceDefendFromCheck(piece, i, j, playerColor)) {
+                        return false; // Найден ход, который устраняет шах
+                    }
+                }
+            }
+        }
+
+        return true; // Ни один ход не устраняет шах, следовательно, это мат
+    }
 
 
     // Метод для преобразования буквенной координаты в индекс массива
